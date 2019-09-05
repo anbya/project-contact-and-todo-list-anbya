@@ -1,0 +1,15 @@
+.hiddenFileInput > input{
+opacity: 0;
+cursor: pointer;
+}
+.hiddenFileInput{
+border: 1px solid #ccc;
+width: auto;
+height: auto;
+display: inline-block;
+overflow: hidden;
+}
+
+#inputFile{
+    opacity: 0;
+}
