@@ -4,45 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <title>contact and todo list</title>
+    <link rel="shortcut icon" href="./vintage-eyeglasses.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container-fluid" style="padding-bottom: 15vh; padding-top: 15vh;">
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h1 class="text-center">Input file pict preview</h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row justify-content-center">
-                                    <div class="col-6">
-                                        <img class="img-fluid" id="previewPict" src="./assets/images/defaultImage.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-6">
-                                        <h4 id="tampFile"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <input type="File" id="inputFile">
-                                <button id="inputFileButton" class="btn btn-block btn-primary">Upload Image</button>
-                            </div>
-                        </div>
-                    </div>
+<div class="mywrap">
+    <div class="stikyheader">
+        <div class="container">
+            <div class="row mynav">
+                <div class="col-3 align-self-center" style="padding: 0px;">
+                    <a class="btn btn-block btn-dark" href="#main" style="border-radius: 0px;">HOME</a>
+                </div>
+                <div class="col-3 align-self-center" style="padding: 0px;">
+                    <a class="btn btn-block btn-dark" href="#aboutme" style="border-radius: 0px;">ABOUT ME</a>
+                </div>
+                <div class="col-3 align-self-center" style="padding: 0px;">
+                    <a class="btn btn-block btn-dark" href="#myskill" style="border-radius: 0px;">SKILL OVERVIEW</a>
+                </div>
+                <div class="col-3 align-self-center" style="padding: 0px;">
+                    <a class="btn btn-block btn-dark" href="#contactme" style="border-radius: 0px;">CONTACT ME</a>
                 </div>
             </div>
         </div>
     </div>
+    <div class="myhero" id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <a class="justifyandaligncenter"><img src="./assets/images/vintage-eyeglasses.png" alt="heheee" style="width: 25%;" /></a>
+                    <h4 class="justifyandaligncenter">Hello My Name is</h4>
+                    <h2 class="justifyandaligncenter"><b>ANBYA ARMY ALI</b></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="myhero2" id="aboutme">
+        <section id="what-we-do">
+            <div class="container-fluid">
+                <h2 class="section-title mb-2 h1">What i am do</h2>
+                <p class="text-center text-muted h5">Create and design an awesome website or web apps.</p>
+                <div class="row mt-5">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/coding.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Website App Development</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/web-development.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Website Design</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/mobile-web.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Mobile App Development</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </section>
+    </div>
+    <div class="myhero2" id="myskill">
+        <section id="what-we-do">
+            <div class="container-fluid">
+                <h2 class="section-title mb-2 h1">Skills Overview</h2>
+                <p class="text-center text-muted h5">I have more than 3 years' experience building web applications for clients. Below is a quick overview of my main technical skill sets and tools I use. Want to find out more about my experience? </p>
+                <div class="row mt-5">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-12 justifyandaligncenter">
+                                <img src="./assets/images/coding.png" alt="heheee" style="width: 25%;" />
+                            </div>
+                            <div class="col-12 justifycenter">
+                                <h3 class="card-title">Website App Development</h3>
+                            </div>
+                            <div class="col-12 paddall25">
+                                <ul class="skills-list list-unstyled text-secondary">
+                                    <li class="mb-2"><i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i> React/Redux/Angular</li>
+                                    <li class="mb-2"><i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i> Javascript</li>
+                                    <li class="mb-2"><i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i> Node.js</li>							        
+                                    <li class="mb-2"><i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i> Webpack/Gulp/Grunt</li>
+                                    <li class="mb-2"><i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i> HTML/CSS/SASS/LESS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/web-development.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Website Design</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/mobile-web.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Mobile App Development</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </section>
+    </div>
+    <div class="myhero2" id="contactme">
+        <section id="what-we-do">
+            <div class="container-fluid">
+                <h2 class="section-title mb-2 h1">What i am do</h2>
+                <p class="text-center text-muted h5">Create and design an awesome website or web apps.</p>
+                <div class="row mt-5">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/coding.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Website App Development</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/web-development.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Website Design</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row warp">
+                            <div class="col-3">
+                                <img src="./assets/images/mobile-web.png" alt="heheee" style="width: 100%;" />
+                            </div>
+                            <div class="col-9 aligncenter">
+                                <h3 class="card-title">Mobile App Development</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </section>
+    </div>
+    <div class="container-fluid stikyfooter">
+        <div class="row">
+            <div class="col-12 align-self-center">
+                    You can reach me on <a href="https://wa.me/628119298089" style="text-decoration: none;color:rgb(163, 163, 163);">Whatsapp</a> or email me at <a href="mailto:anbyaalibia@gmail.com" style="text-decoration: none;color:rgb(163, 163, 163);">anbyaalibia@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
 </body>
 </html>
