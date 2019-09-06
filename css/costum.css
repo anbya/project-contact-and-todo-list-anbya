@@ -34,18 +34,7 @@ h6 {
 	font-size: 2em;
 }
 
-// Medium devices (tablets, 48em and up)
-// 
-// At this point you have overridden Bootstraps rem's and are
-// into module based font sizes should you require it. 
-//
-// I took a while over this change because I felt that there
-// is no reason why I cant use a modified scale on another 
-// device size. So I did, the headings have now taken on
-// "Perfect Fourth" and the dislpay-* has been put to the
-// Bootstrap defaults.
-//
-//------------------------------------------------------------//
+
 @media (min-width: 48em) {
 	h1 {
 	  font-size: 2.441em;
@@ -73,7 +62,6 @@ h6 {
 	}
 }
 
-// Large devices (desktops, 62em and up)
 @media (min-width: 62em) {
 	html,
 	body {
@@ -81,24 +69,9 @@ h6 {
 	}
 }
 
-// Extra large devices (large desktops, 75em and up)
 @media (min-width: 75em) {
 	html,
 	body {
 		font-size: 18px !important;
-	}
-}
-
-// Pen Specific Styles
-.jumbotron {
-	font-size: 16px;
-	@media (min-width: 62em) {
-		font-size: 20px;
-	}
-	h1 {
-		border-bottom: 4px solid #0275d8;
-	}
-	p.lead {
-		border-radius: 4px;
 	}
 }
