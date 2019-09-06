@@ -27,7 +27,7 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
           <div class="sidebar-heading" id="userBarName"></div>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Contact</a>
+            <a id="contactBtn" href="#testScroll" class="list-group-item list-group-item-action bg-light">Contact</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Todo</a>
             <a id="logOutBtn" href="#" class="list-group-item list-group-item-action bg-light">Log Out</a>
           </div>
@@ -42,15 +42,33 @@
           </nav>
     
           <div class="container-fluid mainWraper">
-            <div class="row" style="height: 400vh;">
+            <div id="testScroll" class="row" style="height: 100vh;">
               <div class="col-12 nopadding">
                 <div class="card">
                   <div class="card-header">
                     <h1 class="mt-4">Contact Panel</h1>
                   </div>
                   <div class="card-body">
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+                      <div class="row">
+                          <div class="col-4">
+                            <div class="card">
+                              <div class="card-body" style="min-height: 20vh;">
+                                  <div class="row">
+                                      <div class="col-4 text-center">
+                                          <figure>
+                                          <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                                          </figure>
+                                      </div>
+                                      <div class="col-8 align-self-center">
+                                          <h5>NAma</h5>
+                                          <h5>email</h5>
+                                          <span>website</span></br>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
                   </div>
                 </div>
               </div>

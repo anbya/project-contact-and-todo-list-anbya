@@ -50,3 +50,8 @@ $("#logOutBtn").click(function(e) {
     localStorage.removeItem("userInfo");
     window.location = "login.html";
 });
+// $("#contactBtn").click(function(e) {
+//     document.getElementById('testScroll').scrollIntoView({
+//         behavior: 'smooth'
+//     });
+// });
