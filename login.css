@@ -1,0 +1,23 @@
+body{
+    background-image: url(./assets/images/bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.bgopacity07{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1em;
+}
+.height100{
+    height: 100vh;
+}
+.height75{
+    min-height: 75vh;
+}
+.padtop{
+    padding-top: 2em;
+}
+.padbottom{
+    padding-bottom: 2em;
+}
