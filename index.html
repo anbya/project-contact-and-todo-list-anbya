@@ -6,60 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>contact and todo list</title>
     <link rel="shortcut icon" href="./assets/images/vintage-eyeglasses.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min .css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="mywrap">
-    <div class="stikyheader">
-        <div class="container">
-            <div class="row mynav">
-                <div class="col-6 align-self-center" style="padding: 0px;">
-                    <a class="btn btn-block btn-dark" href="#contact" style="border-radius: 0px;">Contact</a>
-                </div>
-                <div class="col-6 align-self-center" style="padding: 0px;">
-                    <a class="btn btn-block btn-dark" href="#todo" style="border-radius: 0px;">To Do List</a>
-                </div>
-            </div>
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+          <div class="sidebar-heading">Start Bootstrap </div>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light">Contact</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+          </div>
         </div>
-    </div>
-    <div class="myhero" id="contact">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card innerwarp">
-                        <div class="card-body">
-                            <h1 id=testDom></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+    
+          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+          </nav>
+    
+          <div class="container-fluid">
+            <h1 class="mt-4">Simple Sidebar</h1>
+            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+          </div>
         </div>
+        <!-- /#page-content-wrapper -->
+    
     </div>
-    <div class="myhero2" id="todo">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card innerwarp">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid stikyfooter">
-        <div class="row">
-            <div class="col-12 align-self-center">
-                    You can reach me on <a href="https://wa.me/628119298089" style="text-decoration: none;color:rgb(163, 163, 163);">Whatsapp</a> or email me at <a href="mailto:anbyaalibia@gmail.com" style="text-decoration: none;color:rgb(163, 163, 163);">anbyaalibia@gmail.com</a>
-            </div>
-        </div>
-    </div>
-</div>
-    <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- /#wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
