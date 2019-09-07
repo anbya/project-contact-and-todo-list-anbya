@@ -22,15 +22,11 @@ $(document).ready(function() {
         let pass1 = document.getElementById("userPass1").value;
         let pass2 = document.getElementById("userPass2").value;
         if(pass1 == pass2){
-            $.ajax({ 
-                'url': 'https://transdeal.co.id/eksapi/project_sign_up.php', 
+            $.ajax({
                 'type': 'POST',
+                'url': 'https://transdeal.co.id/eksapi/project_sign_up.php',
                 'data': $('#signUp').serialize(),
-                'cache': false,
-                'contentType': false,
-                'processData': false,
-                'async': false,
-                'success': function(){ 
+                'success': function(html){
                 alert("You've been registered succesfully please login");
                 $('#modal_sign_up').modal('hide');
                 }
