@@ -24,9 +24,9 @@ $(document).ready(function() {
         if(pass1 == pass2){
             $.ajax({
                 'type': 'POST',
-                'url': 'https://transdeal.co.id/eksapi/project_sign_up.php',
+                'url': 'http://transdeal.co.id/eksapi/project_sign_up.php',
                 'data': $('#signUp').serialize(),
-                'success': function(html){
+                'success': function(){
                 alert("You've been registered succesfully please login");
                 $('#modal_sign_up').modal('hide');
                 }
