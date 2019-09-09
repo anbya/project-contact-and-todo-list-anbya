@@ -7,12 +7,28 @@ $("#signInBtn").click(function(e) {
         alert("User name atau password tidak boleh kosong")
     }
     else{
-        let detUser = [
-            [userName, userPass]
-        ];
-        myJSON = JSON.stringify(detUser);
-        localStorage.setItem("userInfo", myJSON);
-        window.location = "index.html";
+        for(i=1;i>=1;i++){
+            cekIdUser = localStorage.getItem(i);
+            if(cekIdUser=== undefined || cekIdUser=== null){
+                alert("Sorry we couldn't find your user name");
+                i=-99;
+            }
+            else{
+                parseJsonIdUser = JSON.parse(cekIdUser);
+                if(parseJsonIdUser[0] == userNAme)
+                {
+                    if(parseJsonIdUser[1] == userPass){
+                        i=-99;
+                        localStorage.setItem("userInfo", userNAme);
+                        window.location = "index.html";
+                    }
+                    else{
+                        alert("Please input right password");
+                        i=-99;
+                    }
+                }
+            }
+        }
     }
 });
 
