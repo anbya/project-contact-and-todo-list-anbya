@@ -35,7 +35,6 @@ $(document).ajaxComplete(function(){
 //cek user info
 $(document).ready(function() { 
     let userInfo  = localStorage.getItem("userInfo");
-    console.log(userInfo);
     if(userInfo === null){
         window.location = "login.html";
     }
