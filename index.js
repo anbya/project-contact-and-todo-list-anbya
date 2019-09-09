@@ -86,6 +86,7 @@ function loadContact(){
                 i=-99;
             }
             else{
+                let parseJsonContactData = JSON.parse(cekContactData);
                 let innerContactDataWrap = document.getElementById("contactDataWrap").innerHTML;
                 document.getElementById("contactDataWrap").innerHTML = `${innerContactDataWrap}
                 <div class="col-4">
@@ -98,8 +99,8 @@ function loadContact(){
                           </figure>
                         </div>
                         <div class="col-8 align-self-center">
-                          <h5>Nama : anbya</h5>
-                          <h5>email</h5>
+                          <h5>Nama : ${parseJsonContactData[0]}</h5>
+                          <h5>Email : ${parseJsonContactData[1]}</h5>
                           <span>website</span></br>
                         </div>
                       </div>
@@ -111,3 +112,30 @@ function loadContact(){
         }
     }
 }
+function resetAddForm(){
+    document.getElementById("contactAddForm").contactName.value = "";
+    document.getElementById("contactAddForm").contactPhone.value = "";
+    document.getElementById("contactAddForm").contactEmail.value = "";
+    document.getElementById("contactAddForm").contactWebsite.value = "";
+    document.getElementById("contactAddForm").contactBirth.value = "";
+    document.getElementById("contactAddForm").contactAddress.value = "";
+}
+$(document).ready(function() { 
+    $("#contactAddForm").submit(function(e) { 
+        e.preventDefault();
+        let prmAddContact = document.getElementById("contactAddForm").prmAddContact.value;
+        let contactName = document.getElementById("contactAddForm").contactName.value;
+        let contactPhone = document.getElementById("contactAddForm").contactPhone.value;
+        let contactEmail = document.getElementById("contactAddForm").contactEmail.value;
+        let contactWebsite = document.getElementById("contactAddForm").contactWebsite.value;
+        let contactBirth = document.getElementById("contactAddForm").contactBirth.value;
+        let contactAddress = document.getElementById("contactAddForm").contactAddress.value;
+        let contactDetail = [contactName,contactPhone,contactEmail,contactWebsite,contactBirth,contactAddress];
+        let stringcontactDetail = JSON.stringify(contactDetail);
+        localStorage.setItem(prmAddContact, stringcontactDetail);
+        alert("New contact has been added.");
+        resetAddForm();
+        $('#contactAddPanel').collapse("hide");
+        loadContact();
+    }); 
+});
