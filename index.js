@@ -187,7 +187,7 @@ function loadTodo(){
                     <div class="card">
                         <div class="card-body" style="min-height: 3vh;">
                             <div class="row">
-                                <div class="col-11 align-item-center">
+                                <div class="col-10 align-item-center">
                                     <h5${todoClass}>Name : ${parseJsonTodoData[0]}</h5>
                                 </div>
                                 <div class="col-1 align-item-center">
