@@ -89,23 +89,35 @@ function loadContact(){
                 let parseJsonContactData = JSON.parse(cekContactData);
                 let innerContactDataWrap = document.getElementById("contactDataWrap").innerHTML;
                 document.getElementById("contactDataWrap").innerHTML = `${innerContactDataWrap}
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body" style="min-height: 20vh;">
-                      <div class="row">
-                        <div class="col-4 text-center">
-                          <figure>
-                          <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-                          </figure>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="card-body" style="min-height: 20vh;">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                <figure>
+                                <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                                </figure>
+                                </div>
+                                <div class="col-8 align-self-center">
+                                <h5>Name : ${parseJsonContactData[0]}</h5>
+                                <h5>Phone : ${parseJsonContactData[1]}</h5>
+                                </div>
+                            </div>
+                            <div class="row collapse" id="${prmContactData}">
+                                <div class="col-12 align-self-center">
+                                <h5>Email : ${parseJsonContactData[2]}</h5>
+                                <h5>Website : ${parseJsonContactData[3]}</h5>
+                                <h5>Birth Date : ${parseJsonContactData[4]}</h5>
+                                <h5>Address : ${parseJsonContactData[5]}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a class="btn btn-block btn-primary" style="color: white;" data-toggle="collapse" data-target="#${prmContactData}" >See Detail</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-8 align-self-center">
-                          <h5>Nama : ${parseJsonContactData[0]}</h5>
-                          <h5>Email : ${parseJsonContactData[1]}</h5>
-                          <span>website</span></br>
-                        </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
                 `;
             }
