@@ -432,3 +432,9 @@
   bottom: 1em;
   right: 1em;
 }
+.gristengah{
+  text-decoration: line-through;
+}
+.pointercsr{
+  cursor: pointer;
+}

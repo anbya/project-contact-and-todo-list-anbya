@@ -63,6 +63,7 @@ $("#todoBtn").click(function(e) {
     document.getElementById("indexPanel").classList.add("mainpanel");
     document.getElementById("contactPanel").classList.add("mainpanel");
     document.getElementById("todoPanel").classList.remove("mainpanel");
+    loadTodo();
 });
 
 function loadContact(){
@@ -151,3 +152,79 @@ $(document).ready(function() {
         loadContact();
     }); 
 });
+
+function loadTodo(){
+    if(localStorage.getItem("todo1") === undefined || localStorage.getItem("todo1") === null){
+        document.getElementById("prmAddTodo").value = "todo1";
+        document.getElementById("todoDataWrap").innerHTML = ``;
+        let innerTodoDataWrap = document.getElementById("todoDataWrap").innerHTML;
+        document.getElementById("todoDataWrap").innerHTML = `${innerTodoDataWrap}
+        <div class="col-12 text-center">
+            <h1>No Data Found</h1>
+        </div>
+        `;
+    }
+    else{
+        document.getElementById("todoDataWrap").innerHTML = ``;
+        for(i=1;i>=1;i++){
+            let prmTodoData = "todo"+i;
+            let cekTodoData = localStorage.getItem(prmTodoData);
+            if(cekTodoData === undefined || cekTodoData === null){
+                document.getElementById("prmAddTodo").value = prmTodoData;
+                i=-99;
+            }
+            else{
+                let parseJsonTodoData = JSON.parse(cekTodoData);
+                let innerTodoDataWrap = document.getElementById("todoDataWrap").innerHTML;
+                if(parseJsonTodoData[1]=="DONE"){
+                    todoClass=` class="gristengah"`;
+                }
+                else{
+                    todoClass=``;
+                }
+                document.getElementById("todoDataWrap").innerHTML = `${innerTodoDataWrap}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="card">
+                        <div class="card-body" style="min-height: 3vh;">
+                            <div class="row">
+                                <div class="col-11 align-item-center">
+                                    <h5${todoClass}>Name : ${parseJsonTodoData[0]}</h5>
+                                </div>
+                                <div class="col-1 align-item-center">
+                                    <a class="pointercsr" onclick="doneTodo('${prmTodoData}')"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+        }
+    }
+}
+$(document).ready(function() { 
+    $("#todoAddForm").submit(function(e) { 
+        e.preventDefault();
+        let prmAddTodo = document.getElementById("todoAddForm").prmAddTodo.value;
+        let whatTodo = document.getElementById("todoAddForm").whatTodo.value;
+        let todoDetail = [whatTodo,"NOTDONE"];
+        let stringtodoDetail = JSON.stringify(todoDetail);
+        localStorage.setItem(prmAddTodo, stringtodoDetail);
+        alert("New To do has been added.");
+        resetTodoForm();
+        $('#modalAddTodo').modal("hide");
+        loadTodo();
+    }); 
+});
+
+function resetTodoForm(){
+    document.getElementById("todoAddForm").whatTodo.value = "";
+}
+function doneTodo(todoId){
+    let todoToDone = localStorage.getItem(todoId);
+    let parseJsonTodoToDone = JSON.parse(todoToDone);
+    let todoUpdate = [parseJsonTodoToDone[0],"DONE"];
+    let stringtodoUpdate = JSON.stringify(todoUpdate);
+    localStorage.setItem(todoId, stringtodoUpdate);
+    loadTodo();
+}
