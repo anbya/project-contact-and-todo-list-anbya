@@ -424,3 +424,6 @@
 .nopadding{
   padding: 0px;
 }
+.mainpanel{
+  display: none;
+}

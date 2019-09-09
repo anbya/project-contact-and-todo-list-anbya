@@ -39,9 +39,10 @@ $(document).ready(function() {
         window.location = "login.html";
     }
     else{
-        jsonData = JSON.parse(userInfo);
-        let userBarName = jsonData[0][0];
+        let userBarName = userInfo;
         document.getElementById("userBarName").innerHTML = userBarName;
+        document.getElementById("userBarNamePanel").innerHTML = `<h1>Hello ${userBarName}</h1>`;
+        loadContact();
     }
 });
 $("#logOutBtn").click(function(e) {
@@ -49,8 +50,64 @@ $("#logOutBtn").click(function(e) {
     localStorage.removeItem("userInfo");
     window.location = "login.html";
 });
-// $("#contactBtn").click(function(e) {
-//     document.getElementById('testScroll').scrollIntoView({
-//         behavior: 'smooth'
-//     });
-// });
+$(document).ready(function() { 
+    document.getElementById("indexPanel").classList.remove("mainpanel");
+});
+$("#contactBtn").click(function(e) {
+    document.getElementById("indexPanel").classList.add("mainpanel");
+    document.getElementById("todoPanel").classList.add("mainpanel");
+    document.getElementById("contactPanel").classList.remove("mainpanel");
+    loadContact();
+});
+$("#todoBtn").click(function(e) {
+    document.getElementById("indexPanel").classList.add("mainpanel");
+    document.getElementById("contactPanel").classList.add("mainpanel");
+    document.getElementById("todoPanel").classList.remove("mainpanel");
+});
+
+function loadContact(){
+    if(localStorage.getItem("contact1") === undefined || localStorage.getItem("contact1") === null){
+        document.getElementById("prmAddContact").value = "contact1";
+        document.getElementById("contactDataWrap").innerHTML = ``;
+        let innerContactDataWrap = document.getElementById("contactDataWrap").innerHTML;
+        document.getElementById("contactDataWrap").innerHTML = `${innerContactDataWrap}
+        <div class="col-12 text-center">
+            <h1>No Data Found</h1>
+        </div>
+        `;
+    }
+    else{
+        document.getElementById("contactDataWrap").innerHTML = ``;
+        for(i=1;i>=1;i++){
+            prmContactData = "contact"+i;
+            cekContactData = localStorage.getItem(prmContactData);
+            if(cekContactData === undefined || cekContactData === null){
+                document.getElementById("prmAddContact").value = prmContactData;
+                i=-99;
+            }
+            else{
+                let innerContactDataWrap = document.getElementById("contactDataWrap").innerHTML;
+                document.getElementById("contactDataWrap").innerHTML = `${innerContactDataWrap}
+                <div class="col-4">
+                  <div class="card">
+                    <div class="card-body" style="min-height: 20vh;">
+                      <div class="row">
+                        <div class="col-4 text-center">
+                          <figure>
+                          <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                          </figure>
+                        </div>
+                        <div class="col-8 align-self-center">
+                          <h5>Nama : anbya</h5>
+                          <h5>email</h5>
+                          <span>website</span></br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                `;
+            }
+        }
+    }
+}

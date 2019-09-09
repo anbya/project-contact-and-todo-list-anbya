@@ -2,7 +2,7 @@ $("#signInBtn").click(function(e) {
     e.preventDefault();
     let userName = document.getElementById("signInName").value;
     let userPass = document.getElementById("signInPass").value;
-    if(userName == "" || userPass == "")
+    if(userName === "" || userPass === "")
     {
         alert("User name atau password tidak boleh kosong")
     }
@@ -12,19 +12,34 @@ $("#signInBtn").click(function(e) {
             if(cekIdUser=== undefined || cekIdUser=== null){
                 alert("Sorry we couldn't find your user name");
                 i=-99;
+                console.log(parseJsonIdUser[0]);
+                console.log(parseJsonIdUser[1]);
+                console.log(userNAme);
+                console.log(userPass);
             }
             else{
+                let userName = document.getElementById("signInName").value;
                 parseJsonIdUser = JSON.parse(cekIdUser);
-                if(parseJsonIdUser[0] === userNAme)
+                if(parseJsonIdUser[0] == userName)
                 {
-                    if(parseJsonIdUser[1] === userPass){
+                    let userPass = document.getElementById("signInPass").value;
+                    if(parseJsonIdUser[1] == userPass){
                         i=-99;
-                        localStorage.setItem("userInfo", userNAme);
+                        let userName = document.getElementById("signInName").value;
+                        localStorage.setItem("userInfo", userName);
                         window.location = "index.html";
+                        console.log(parseJsonIdUser[0]);
+                        console.log(parseJsonIdUser[1]);
+                        console.log(userNAme);
+                        console.log(userPass);
                     }
                     else{
                         alert("Please input right password");
                         i=-99;
+                        console.log(parseJsonIdUser[0]);
+                        console.log(parseJsonIdUser[1]);
+                        console.log(userNAme);
+                        console.log(userPass);
                     }
                 }
             }

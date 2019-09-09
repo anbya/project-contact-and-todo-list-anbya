@@ -27,8 +27,8 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
           <div class="sidebar-heading" id="userBarName"></div>
           <div class="list-group list-group-flush">
-            <a id="contactBtn" href="#testScroll" class="list-group-item list-group-item-action bg-light">Contact</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Todo</a>
+            <a id="contactBtn" class="list-group-item list-group-item-action bg-light">Contact</a>
+            <a id="todoBtn" class="list-group-item list-group-item-action bg-light">Todo</a>
             <a id="logOutBtn" href="#" class="list-group-item list-group-item-action bg-light">Log Out</a>
           </div>
         </div>
@@ -42,33 +42,68 @@
           </nav>
     
           <div class="container-fluid mainWraper">
-            <div id="testScroll" class="row" style="height: 100vh;">
+            <div id="indexPanel" class="row mainpanel" style="min-height: 100vh;">
+              <div class="col-12 nopadding">
+                <div class="card">
+                  <div id="userBarNamePanel" class="card-header">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="contactPanel" class="row mainpanel" style="min-height: 100vh;">
               <div class="col-12 nopadding">
                 <div class="card">
                   <div class="card-header">
-                    <h1 class="mt-4">Contact Panel</h1>
+                    <div class="row">
+                      <div class="col-8">
+                        <h1>Contact Panel</h1>
+                      </div>
+                      <div class="col-2 justify-content-center align-item-center">
+                        <a class="btn btn-block btn-primary" style="color: white;" data-toggle="collapse" data-target="#contactAddPanel" >Add</a>
+                      </div>
+                      <div class="col-2">
+                        <a class="btn btn-block btn-primary" style="color: white;">Filter</a>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-body">
-                      <div class="row">
-                          <div class="col-4">
-                            <div class="card">
-                              <div class="card-body" style="min-height: 20vh;">
-                                  <div class="row">
-                                      <div class="col-4 text-center">
-                                          <figure>
-                                          <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-                                          </figure>
-                                      </div>
-                                      <div class="col-8 align-self-center">
-                                          <h5>NAma</h5>
-                                          <h5>email</h5>
-                                          <span>website</span></br>
-                                      </div>
-                                  </div>
-                              </div>
-                            </div>
+                    <form id="contactAddForm">
+                      <div id="contactAddPanel" class="row collapse">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <input type="text" id="prmAddContact" class="form-control" value="" name="id" required>
                           </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" class="form-control" value="" name="contactName" placeholder="Input Full Name" required>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="number" id="contactPhone" class="form-control" value="" name="contactPhone" placeholder="Input Phone Number" required>
+                          </div>
+                        </div>
+                        <div class="col-12" style="padding: 0.5em;">
+                          <button type="submit" class="btn btn-block btn-primary" style="color: #fff;">PROCED ADD</button>
+                        </div>
                       </div>
+                    </form>
+                    <div id="contactDataWrap" class="row">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="todoPanel" class="row mainpanel" style="min-height: 100vh;">
+              <div class="col-12 nopadding">
+                <div class="card">
+                  <div class="card-header">
+                    <h1 class="mt-4">Todo List Panel</h1>
+                  </div>
+                  <div class="card-body">
                   </div>
                 </div>
               </div>
