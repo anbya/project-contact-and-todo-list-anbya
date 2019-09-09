@@ -15,9 +15,9 @@ $("#signInBtn").click(function(e) {
             }
             else{
                 parseJsonIdUser = JSON.parse(cekIdUser);
-                if(parseJsonIdUser[0] == userNAme)
+                if(parseJsonIdUser[0] === userNAme)
                 {
-                    if(parseJsonIdUser[1] == userPass){
+                    if(parseJsonIdUser[1] === userPass){
                         i=-99;
                         localStorage.setItem("userInfo", userNAme);
                         window.location = "index.html";
