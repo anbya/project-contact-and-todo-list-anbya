@@ -183,11 +183,11 @@ function loadTodo(){
                     todoClass=``;
                 }
                 document.getElementById("todoDataWrap").innerHTML = `${innerTodoDataWrap}
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="background-color:#f1f1f1;padding:0px;">
                     <div class="card">
                         <div class="card-body" style="min-height: 3vh;">
                             <div class="row">
-                                <div class="col-10 align-item-center">
+                                <div class="col-11 align-item-center">
                                     <h5${todoClass}>Name : ${parseJsonTodoData[0]}</h5>
                                 </div>
                                 <div class="col-1 align-item-center">
