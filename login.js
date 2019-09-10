@@ -109,16 +109,16 @@ $(document).ready(function() {
 //     }); 
 // }); 
 
-// $("#testCors").click(function(e) {
-//     e.preventDefault();
-//     let testData="CORS sukses";
-//     $.ajax({
-//         'type': 'POST',
-//         'crossDomain': 'true',
-//         'url': 'http://transdeal.co.id/eksapi/project_sign_up.php',
-//         'data': {testData:testData},
-//         'success': function(html){
-//         alert(`${html}`);
-//         }
-//     });
-// });
+$("#testCors").click(function(e) {
+    e.preventDefault();
+    let testData="CORS sukses";
+    $.ajax({
+        'type': 'POST',
+        'crossDomain': 'true',
+        'url': 'http://transdeal.co.id/eksapi/project_sign_up.php',
+        'data': {testData:testData},
+        'success': function(html){
+        alert(`${html}`);
+        }
+    });
+});
