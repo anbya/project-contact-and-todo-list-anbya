@@ -88,9 +88,15 @@ function loadContact(){
             }
             else{
                 let parseJsonContactData = JSON.parse(cekContactData);
+                if(parseJsonContactData[0]=="" || parseJsonContactData[1]=="" || parseJsonContactData[2]=="" || parseJsonContactData[3]=="" || parseJsonContactData[4]=="" || parseJsonContactData[5]==""){
+                    contactClassHideShow=`col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 todohide`;
+                }
+                else{
+                    contactClassHideShow=`col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4`;
+                }
                 let innerContactDataWrap = document.getElementById("contactDataWrap").innerHTML;
                 document.getElementById("contactDataWrap").innerHTML = `${innerContactDataWrap}
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="${contactClassHideShow}">
                     <div class="card">
                         <div class="card-body" style="min-height: 20vh;">
                             <div class="row">
@@ -125,6 +131,12 @@ function loadContact(){
         }
     }
 }
+// function clearContact(todoId){
+//     let todoUpdate = ["",""];
+//     let stringtodoUpdate = JSON.stringify(todoUpdate);
+//     localStorage.setItem(todoId, stringtodoUpdate);
+//     loadTodo();
+// }
 function resetAddForm(){
     document.getElementById("contactAddForm").contactName.value = "";
     document.getElementById("contactAddForm").contactPhone.value = "";
@@ -182,16 +194,22 @@ function loadTodo(){
                 else{
                     todoClass=``;
                 }
+                if(parseJsonTodoData[0]=="" || parseJsonTodoData[1]==""){
+                    todoClassHideShow=`col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 todohide`;
+                }
+                else{
+                    todoClassHideShow=`col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12`;
+                }
                 document.getElementById("todoDataWrap").innerHTML = `${innerTodoDataWrap}
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="background-color:#f1f1f1;padding:0px;">
+                <div class="${todoClassHideShow}" style="background-color:#f1f1f1;padding:0px;">
                     <div class="card">
                         <div class="card-body" style="min-height: 3vh;">
                             <div class="row">
-                                <div class="col-11 align-item-center">
+                                <div class="col-11 align-item-center pointercsr" onclick="doneTodo('${prmTodoData}')">
                                     <h5${todoClass}>Name : ${parseJsonTodoData[0]}</h5>
                                 </div>
                                 <div class="col-1 align-item-center">
-                                    <a class="pointercsr" onclick="doneTodo('${prmTodoData}')"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></a>
+                                    <a class="pointercsr" onclick="clearTodo('${prmTodoData}')"><i class="fa fa-trash fa-x1" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -224,6 +242,12 @@ function doneTodo(todoId){
     let todoToDone = localStorage.getItem(todoId);
     let parseJsonTodoToDone = JSON.parse(todoToDone);
     let todoUpdate = [parseJsonTodoToDone[0],"DONE"];
+    let stringtodoUpdate = JSON.stringify(todoUpdate);
+    localStorage.setItem(todoId, stringtodoUpdate);
+    loadTodo();
+}
+function clearTodo(todoId){
+    let todoUpdate = ["",""];
     let stringtodoUpdate = JSON.stringify(todoUpdate);
     localStorage.setItem(todoId, stringtodoUpdate);
     loadTodo();
